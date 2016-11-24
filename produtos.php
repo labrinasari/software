@@ -1,5 +1,5 @@
 <div class="box_titulo_interno">
-    <H2><i class="fa fa-car fa-1x"></i> Lista de Produtos</H2>
+    <H2><i class="fa fa-laptop fa-1x"></i> Lista de Produtos</H2>
 </div>
 <br>
 <div class="box_link">

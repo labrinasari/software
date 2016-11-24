@@ -1,3 +1,8 @@
+
+	
+        <link rel="icon" href="img/logo.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 <?php
 session_start();
 if (!empty($_SESSION["login"]) && $_SESSION["validou"] == true) {
