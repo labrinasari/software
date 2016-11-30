@@ -1,29 +1,27 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Funcionario
- *
- * @author ademar.perfoll
- */
 class Funcionario {
-    //put your code here
-    private $id;
+    private $cpf_funcionarios;
     private $nome;
+    private $funcao;
+    private $endereco;
     private $login;
     private $senha;
     
-    function getId() {
-        return $this->id;
+    function getCpf_funcionarios() {
+        return $this->cpf_funcionarios;
     }
 
     function getNome() {
         return $this->nome;
+    }
+
+    function getFuncao() {
+        return $this->funcao;
+    }
+
+    function getEndereco() {
+        return $this->endereco;
     }
 
     function getLogin() {
@@ -34,12 +32,20 @@ class Funcionario {
         return $this->senha;
     }
 
-    function setId($id) {
-        $this->id = $id;
+    function setCpf_funcionarios($cpf_funcionarios) {
+        $this->cpf_funcionarios = $cpf_funcionarios;
     }
 
     function setNome($nome) {
         $this->nome = $nome;
+    }
+
+    function setFuncao($funcao) {
+        $this->funcao = $funcao;
+    }
+
+    function setEndereco($endereco) {
+        $this->endereco = $endereco;
     }
 
     function setLogin($login) {
@@ -49,6 +55,8 @@ class Funcionario {
     function setSenha($senha) {
         $this->senha = $senha;
     }
+
+
 
 
 }

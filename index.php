@@ -1,37 +1,31 @@
-
-	
-        <link rel="icon" href="img/logo.png" type="image/x-icon" />
-        <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
-	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 <?php
-session_start();
+session_start ();
 if (!empty($_SESSION["login"]) && $_SESSION["validou"] == true) {
-    header("Location:principal.php");
+    header("location:pagina_principal.php");
 }
 ?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/estilo_login.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="css/login_style.css" type="text/css" media="all"/>
+        <style>
+            form {
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <div>
-            <h2><img src="img/tyy.png"> InfoSet Informática</h2>
-            <hr>
+            <h2 style="text-align: center;"><i><img src="img/so.jpg" width="300px" height="100px" ></i></h2>
             <br/>
             <form method="post" action="login.php">
-                <label>Login: </label>
+                <label>Login: </label><br>
                 <input type="text" name="login" required/>   
                 <br/>
-                <label>Senha: </label>
+                <label>Senha: </label><br>
                 <input type="password" name="senha" required/>
                 <br/>
                 <input type="submit" name="entrar" value="Entrar"/>        

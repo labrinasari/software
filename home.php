@@ -1,3 +1,4 @@
+
 <div id="home">
-    <img src="img/so.jpg" alt="Img Home">    
+    <img src="img/so.jpg">
 </div>

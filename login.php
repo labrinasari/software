@@ -5,13 +5,13 @@ if (isset($_POST["entrar"])) {
     $senha = $_POST["senha"];
     $DaoFuncionario = DaoFuncionario::getInstance();
     $validou = $DaoFuncionario->getLogin($login,$senha);
-    if ($validou["id"] > 0) {
+    if ($validou["cpf_funcionarios"] > 0) {
         session_start();
-        $_SESSION["id"]=$validou["id"];
-        $_SESSION["login"]=$validou["login"];
+        $_SESSION["id"]=$validou["cpf_funcionarios"];
+        $_SESSION["login"]=$validou["usuario"];
         $_SESSION["nome"]=$validou["nome"];
         $_SESSION["validou"]=true;        
-        header("Location:principal.php");
+        header("Location:pagina_principal.php");
     } else {
         echo "<script type='text/javascript'>"
     . "alert('Usuário ou Senha inválidos!');"

@@ -15,18 +15,22 @@ $dados = $DaoFuncionario->listar();
 ?>
 <table>
     <tr>
-        <th>Código</th>
+        <th>CPF</th>
         <th>Nome</th>
-        <th>Login</th>
+        <th>Usuário</th>
+        <th>Função</th>
+        <th>Endereço</th>
         <th>Ações</th>
     </tr>
     <?php
     foreach ($dados as $row) {
-        $id = $row["id"];
+        $id = $row["cpf_funcionarios"];
         echo "<tr>";
-        echo "<td>" . $row["id"] . "</td>";
+        echo "<td>" . $row["cpf_funcionarios"] . "</td>";
         echo "<td>" . $row["nome"] . "</td>";
-        echo "<td>" . $row["login"] . "</td>";
+        echo "<td>" . $row["usuario"] . "</td>";
+        echo "<td>" . $row["funcao"] . "</td>";
+        echo "<td>" . $row["endereco"] . "</td>";
         echo "<td><a href='?pg=editFuncionario&id=$id' title='Editar'><i class='fa fa-pencil fa-lg'></i></a>"
         . " <a href='?pg=delFuncionario&id=$id' title='Excluir' onclick='return confirm(\"Deseja excluir?\")'><i class='fa fa-trash fa-lg'></i></a></td>";
         echo "</tr>";

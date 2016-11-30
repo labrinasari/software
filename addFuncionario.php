@@ -10,11 +10,20 @@
 <br>
 <div class="formulario">
     <form method="post">
+        <label>CPF</label>
+        <input type="text" name="cpf" required/>
+        <br/>
         <label>Nome Completo:</label>
         <input type="text" name="nome" required/>
         <br/>
-        <label>Login:</label>
-        <input type="text" name="login" required/>
+        <label>Funcao:</label>
+        <input type="text" name="funcao" required/>
+        <br/>
+        <label>Endereco:</label>
+        <input type="text" name="endereco" required/>
+        <br/>
+        <label>Usuario:</label>
+        <input type="text" name="usuario" required/>
         <br/>
         <label>Senha:</label>
         <input type="password" name="senha" required/>
@@ -26,13 +35,16 @@
 require_once './dao/DaoFuncionario.php';
 require_once './model/Funcionario.php';
 if (isset($_POST["botao"])) {
-    $funcionario = new Funcionario();
-    $funcionario->setNome($_POST["nome"]);
-    $funcionario->setLogin($_POST["login"]);
-    $funcionario->setSenha($_POST["senha"]);
+    $funcionarios = new Funcionario();
+    $funcionarios->setCpf_funcionarios($_POST["cpf"]);
+    $funcionarios->setNome($_POST["nome"]);
+    $funcionarios->setFuncao($_POST["funcao"]);
+    $funcionarios->setEndereco($_POST["endereco"]);
+    $funcionarios->setLogin($_POST["usuario"]);
+    $funcionarios->setSenha($_POST["senha"]);
     
     $DaoFuncionario = DaoFuncionario::getInstance();
-    $exe = $DaoFuncionario->inserir($funcionario);
+    $exe = $DaoFuncionario->inserir($funcionarios);
     if ($exe) {
         echo "<script type='text/javascript'>"
         . " alert('Cadastrado com Sucesso!');"

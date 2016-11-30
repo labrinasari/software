@@ -16,12 +16,18 @@ $atualizar = $DaoFuncionario->getFuncionario($id);
 <br>
 <div class="formulario">
     <form method="post">
-        <input type="hidden" name="id" value="<?= $atualizar["id"] ?>"/>        
+        <input type="hidden" name="cpf_funcionarios" value="<?= $atualizar["cpf_funcionarios"] ?>"/>        
         <label>Nome Completo:</label>
         <input type="text" name="nome" value="<?= $atualizar["nome"] ?>" required/>
         <br/>     
         <label>Login:</label>
-        <input type="text" name="login" value="<?= $atualizar["login"] ?>" required/>
+        <input type="text" name="usuario" value="<?= $atualizar["usuario"] ?>" required/>
+        <br/>
+        <label>Função:</label>
+        <input type="text" name="funcao" value="<?= $atualizar["funcao"] ?>" required/>
+        <br/>
+        <label>Endereço:</label>
+        <input type="text" name="endereco" value="<?= $atualizar["endereco"] ?>" required/>
         <br/>
         <input type="submit" name="botao" value="Confirmar"/>              
     </form>
@@ -31,9 +37,11 @@ require_once './dao/DaoFuncionario.php';
 require_once './model/Funcionario.php';
 if (isset($_POST["botao"])) {
     $funcionario = new Funcionario();
-    $funcionario->setId($_POST["id"]);
+    $funcionario->setCpf_funcionarios($_POST["cpf_funcionarios"]);
     $funcionario->setNome($_POST["nome"]);
-    $funcionario->setLogin($_POST["login"]);
+    $funcionario->setFuncao($_POST["funcao"]);
+    $funcionario->setEndereco($_POST["endereco"]);
+    $funcionario->setLogin($_POST["usuario"]);
 
     $DaoFuncionario = DaoFuncionario::getInstance();
     $exe = $DaoFuncionario->atualizar($funcionario);
@@ -48,3 +56,4 @@ if (isset($_POST["botao"])) {
         . "</script>";
     }
 }
+?>
